@@ -45,11 +45,12 @@ export function Posts() {
       <section className="section-post">
         <ol>
           {data.map((curElem, index) => {
-  const { _id, title, price, imageUrl } = curElem;
+  const { _id, title, price, imageUrl,type } = curElem;
   return (
     <li key={_id || index}>
       <p>Title: {title}</p>
       <p>Price: {price}</p>
+      <p>type: {type}</p>
       <img src={imageUrl} alt="Post" />
       <button onClick={() => handleUpdatePost(curElem)}>Edit</button>
       <button className="btn-delete" onClick={() => handleDeletePost(_id)}>Delete</button>
